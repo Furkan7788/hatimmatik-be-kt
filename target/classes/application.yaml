@@ -1,0 +1,13 @@
+
+
+springdoc:
+  pre-loading-enabled: true
+  swagger-ui:
+    path: /
+    display-request-duration: true
+
+server:
+  port: 8081
+spring:
+  application:
+    name: Hatimmatik
