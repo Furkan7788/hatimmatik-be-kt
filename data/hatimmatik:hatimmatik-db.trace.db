@@ -1,0 +1,8 @@
+2024-10-19 23:18:29.422748+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE [*]user (\000d\000a    id long,\000d\000a    username varchar(255),\000d\000a    type  varchar(255),\000d\000ateam  varchar(255)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE user (
+    id long,
+    username varchar(255),
+    type  varchar(255),
+team  varchar(255)
+) [42001-224]
