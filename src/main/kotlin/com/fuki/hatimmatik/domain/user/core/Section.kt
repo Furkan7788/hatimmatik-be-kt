@@ -6,6 +6,10 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.Table
+import java.time.LocalDateTime
+
+const val LAST_INDEX_OF_SECTIONS = 30
+const val FIRST_INDEX_OF_SECTIONS = 1
 
 @Entity
 @Table(name = "\"section\"")
@@ -26,4 +30,26 @@ data class Section(
     var startDate: String = "",
     @Column(name = "enddate")
     var endDate: String = "",
-)
+) {
+    fun makeHatim() {
+        val startDate = LocalDateTime.now()
+        val endDate = startDate.plusWeeks(1)
+
+        this.isRead = false
+        this.startDate = startDate.toString()
+        this.endDate = endDate.toString()
+        if (this.index != LAST_INDEX_OF_SECTIONS) {
+            this.index++
+        } else {
+            this.index = FIRST_INDEX_OF_SECTIONS
+        }
+    }
+
+    fun read() {
+        this.isRead = true
+    }
+
+    fun unRead() {
+        this.isRead = false
+    }
+}

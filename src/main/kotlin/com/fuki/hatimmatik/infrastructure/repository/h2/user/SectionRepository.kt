@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository
 @Repository
 interface SectionRepository : JpaRepository<Section, Long> {
     fun findByUserId(userId: Long): Section?
+
+    fun findByIndex(index: Int): Section
 }
