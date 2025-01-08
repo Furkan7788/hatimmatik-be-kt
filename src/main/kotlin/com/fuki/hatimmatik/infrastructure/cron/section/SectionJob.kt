@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component
 class SectionJob(
     private val sectionService: SectionService,
 ) {
-    @Scheduled(cron = "* * * * 1 *")
+    @Scheduled(cron = "0 0 0 * * *")
     fun makeHatim() {
         sectionService.makeHatim()
     }
