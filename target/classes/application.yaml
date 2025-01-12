@@ -7,11 +7,12 @@ springdoc:
 server:
   port: 8081
   ssl:
-    enabled: true
-    key-store: classpath:keystore.p12
-    key-store-password: 123456 # Keystore oluştururken verdiğin şifre
+    enabled: false
+    key-store: classpath:baeldung.p12
+    key-store-password: 123456
     key-store-type: PKCS12
-    key-alias: myapp # Yukarıda kullandığın alias
+    key-alias: baeldung # Yukarıda kullandığın alias
+
 spring:
   application:
     name: Hatimmatik
