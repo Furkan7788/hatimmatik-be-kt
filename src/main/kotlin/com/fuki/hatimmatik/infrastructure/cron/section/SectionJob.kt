@@ -10,6 +10,8 @@ class SectionJob(
 ) {
     @Scheduled(cron = "0 0 23 * * THU")
     fun makeHatim() {
+        println("New Hatim Init Started")
         sectionService.makeHatim()
+        println("New Hatim Init Finished")
     }
 }
