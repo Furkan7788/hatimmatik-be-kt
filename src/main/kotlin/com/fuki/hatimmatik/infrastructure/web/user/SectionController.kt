@@ -16,7 +16,10 @@ class SectionController(
     @GetMapping("/section/{userId}")
     fun getSection(
         @PathVariable userId: Long,
-    ): Section? = service.findSectionByUserId(userId)
+    ): Section? {
+        println("getSection called with $userId")
+        return service.findSectionByUserId(userId)
+    }
 
     @GetMapping("/sections")
     fun getAllSections(): List<Section> = service.findAllSections()
@@ -24,7 +27,10 @@ class SectionController(
     @PatchMapping("/section/read/{index}")
     fun read(
         @PathVariable index: Int,
-    ): Section = service.read(index)
+    ): Section {
+        println("read called with $index")
+        return service.read(index)
+    }
 
     @PatchMapping("/section/unread/{index}")
     fun unRead(
